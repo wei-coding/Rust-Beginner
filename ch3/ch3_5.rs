@@ -44,4 +44,23 @@ fn main() {
     };
     println!("result = {}", result);
 
+    // while
+    let mut number = 3;
+    while number != 0 {
+        println!("{}!", number);
+        number -= 1;
+    }
+    println!("bang!");
+
+    // for
+    let a = [10, 20, 30, 40, 50];
+    for element in a {
+        println!("{}", element);
+    }
+    // or in generator form
+    for number in (1..4).rev() {
+        println!("{}!", number);
+    }
+    println!("升空！！！");
+
 }
