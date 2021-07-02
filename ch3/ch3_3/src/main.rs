@@ -3,7 +3,7 @@ fn main() {
     another_function(5);
 
     // statements has no return value
-    let x = 6;
+    //let x = 6;
     // error if uncomment below
     // let x = (let y = 6);
 
@@ -11,7 +11,7 @@ fn main() {
     let y = {
         let x = 3;
         x + 1
-    }
+    };
     println!("y = {}", y);
 
     let x = five();

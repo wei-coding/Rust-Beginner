@@ -16,7 +16,7 @@ fn main() {
 
     // float
     let x = 2.0; // f64, double
-    let y: f32 = 3.0 //f32, single
+    let y: f32 = 3.0; //f32, single
 
     println!("x = {}, y = {}", x, y);
 
