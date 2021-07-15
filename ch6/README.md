@@ -5,7 +5,7 @@
 * 指固定幾種其一的型態
 * 如IP只有IPv4和IPv6兩種
 * 可定義如下
-```rust=
+```rust
 enum IpAddr {
     V4(u8, u8, u8, u8),
     V6(String),
@@ -28,7 +28,7 @@ let absent_number: Option<i32> = None;
 * 類似switch...case...
 * 可用於任意型別
 * 語法
-```rust=
+```rust
 enum Coin {
     Penny,
     Nickel,
@@ -51,7 +51,7 @@ fn value_in_cents(coin: Coin) -> u8 {
 
 * 如果只用來處理一種狀況用`match`太麻煩
 * `if let`語句可以減少行數
-```rust=
+```rust
  let some_u8_value = Some(0u8);
 match some_u8_value {
     Some(3) => println!("三"),

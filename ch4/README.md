@@ -19,7 +19,7 @@
 
 > 目前都跟其他語言一樣
 
-```rust=
+```rust
 {
     let s = "Hello";
     // 可以使用s
@@ -30,7 +30,7 @@
 
 就一般primitive資料型別使用clone，其他用move
 
-```rust=
+```rust
 let x = 5;
 let y = x;
 // x is still avaliable here
@@ -38,7 +38,7 @@ let y = x;
 
 非primitive
 
-```rust=
+```rust
 let s1 = String::from("hello");
 let s2 = s1;
 // s1 is unavailable here, because data had moved to s2
@@ -46,7 +46,7 @@ let s2 = s1;
 
 如果要使s1仍能使用則要用`.clone()`方法
 
-```rust=
+```rust
 let s1 = String::from("hello");
 let s2 = s1.clone();
 // s1 is still avaliable here
@@ -56,7 +56,7 @@ let s2 = s1.clone();
 
 函式也是一作用域，同樣適用所有權規則
 
-```rust=
+```rust
 fn main() {
     let s = String::from("Hello");
     // String是堆積上物件，所有權轉移到函數內
@@ -79,7 +79,7 @@ fn males_copy(some_int: i32) {
 
 #### 回傳會交回所有權
 
-```rust=
+```rust
 fn main() {
     let s = String::from("Hello");
     // String是堆積上物件，所有權轉移到函數內
@@ -107,7 +107,7 @@ fn males_copy(some_int: i32) {
 如在離開函數後需再使用該字串，則必須額外回傳原字串以保留所有權
 此時會「借用」該變數來做操作
 
-```rust=
+```rust
 fn main() {
     let s1 = String::from("hello");
 
@@ -126,7 +126,7 @@ fn calculate_length(s: &String) -> usize {
 
 在函數內修改引用的值要加`mut`
 
-```rust=
+```rust
 fn main() {
     let mut s = String::from("hello");
 
@@ -141,7 +141,7 @@ fn change(some_string: &mut String) {
 但要注意，一個作用域裡面每個變數只能有一個可變引用（避免race condition）
 下列程式碼是無法正常編譯的
 
-```rust=
+```rust
  let mut s = String::from("hello");
 
 let r1 = &mut s;
@@ -152,7 +152,7 @@ println!("{}, {}", r1, r2);
 
 同樣的，不能混用mutable和inmutable引用（避免意外更動裡面的值）
 
-```rust=
+```rust
 let mut s = String::from("hello");
 
 let r1 = &s; // 沒問題
@@ -167,7 +167,7 @@ println!("{}, {}, and {}", r1, r2, r3);
 下列的`dangle()`函數中，s會在函數離開時釋放掉，但回傳了該指標
 因此無法編譯
 
-```rust=
+```rust
 fn main() {
     let reference_to_nothing = dangle();
 }
@@ -187,7 +187,7 @@ fn dangle() -> &String {
 * 必定為不可變引用
 * `let s = "Hello World"`，此時s也是切片
 
-```rust=
+```rust
 let s = String::from("Hello World");
 let hello = &s[0..5];
 let world = &s[6..10];

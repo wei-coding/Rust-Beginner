@@ -5,7 +5,7 @@
 如同C語言，結構體可以包裹不同型別，並且有名稱
 下面展示基本的結構體
 
-```rust=
+```rust
 struct User {
     username: String,
     email: String,
@@ -16,7 +16,7 @@ struct User {
 
 宣告一個使用者可以使用
 
-```rust=
+```rust
 let user1 = User {
     email: String::from("someone@example.com"),
     username: String::from("someusername123"),
@@ -29,7 +29,7 @@ let user1 = User {
 
 同樣，可以用函數回傳struct
 
-```rust=
+```rust
 fn build_user(email: String, username: String) -> User {
     User {
         email: email,
@@ -42,7 +42,7 @@ fn build_user(email: String, username: String) -> User {
 
 在使用函數建立struct時，可以省略掉跟參數同名的部分，如下：
 
-```rust=
+```rust
 fn build_user(email: String, username: String) -> User {
     User {
         email,
@@ -55,7 +55,7 @@ fn build_user(email: String, username: String) -> User {
 
 也可以使用別的結構體來製作新的結構體
 
-```rust=
+```rust
 let user2 = User {
     email: String::from("another@example.com"),
     username: String::from("anotherusername567"),
@@ -67,7 +67,7 @@ let user2 = User {
 
 如點、色彩等
 
-```rust=
+```rust
 struct Color(u32, u32, u32);
 struct Point(i32, i32, i32);
 
